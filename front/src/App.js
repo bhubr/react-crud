@@ -21,6 +21,11 @@ class App extends Component {
       { id: 2, lat: 43.5736221, lng: 1.3631478 }
     ]
   }
+  componentDidMount () {
+    fetch('/api/markers')
+    .then(response => response.json())
+    .then(markers => this.setState({ markers }))
+  }
   render() {
     return (
       <div className="App">
